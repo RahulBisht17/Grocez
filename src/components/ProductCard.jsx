@@ -12,15 +12,19 @@ const ProductCard = ({ data }) => {
   };
 
   return (
-    <div className="flex flex-col h-auto w-72 m-2 px-2 pb-4 border-2 shadow-lg border-solid rounded-2xl">
+    <div className="flex flex-col h-auto w-72 m-2 px-4 pb-4 border-2 shadow-lg border-solid rounded-2xl">
       <div className="border-solid h-56">
-        <img src={data.catImg} className="h-full m-auto pt-6 productImg" />
+        <Link to={`/products/${data.id}`}>
+          <img src={data.catImg} className="h-full m-auto pt-6 productImg" />
+        </Link>
       </div>
       <div className="pt-6 font-light">
         <div className="mb-2">
-          <Link to={`/products/${data.id}`} className="font-bold text-lg">
-            {data.productName}
-          </Link>
+          <div className="h-14 mb-2">
+            <Link to={`/products/${data.id}`} className="font-bold text-lg">
+              {data.productName}
+            </Link>
+          </div>
           <div className=" flex flex-row gap-1 my-1">
             <Rating
               name="half-rating-read"
@@ -36,22 +40,22 @@ const ProductCard = ({ data }) => {
               {data.brand}
             </a>
           </span>
-        </div>
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-row gap-2 items-center">
-            <span className="font-semibold text-2xl text-green-500">
-              ₹{data.price}
-            </span>
-            <span className="line-through decoration-slate-400">
-              ₹{data.oldPrice}
-            </span>
+          <div className="flex flex-row justify-between">
+            <div className="flex flex-row gap-2 items-center">
+              <span className="font-semibold text-2xl text-green-500">
+                ₹{data.price}
+              </span>
+              <span className="line-through decoration-slate-400">
+                ₹{data.oldPrice}
+              </span>
+            </div>
+            <button
+              onClick={addToCart}
+              className="border-2 border-green-500 bg-green-300 rounded-md w-20 font-extrabold text-green-700"
+            >
+              Add
+            </button>
           </div>
-          <button
-            onClick={addToCart}
-            className="border-2 border-green-500 bg-green-300 rounded-md w-20 font-extrabold text-green-700"
-          >
-            Add
-          </button>
         </div>
       </div>
     </div>

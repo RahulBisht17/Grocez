@@ -1,7 +1,7 @@
 const data = {
   productData: [
     {
-      cat_name: "dals and pulses",
+      cat_name: "Dals & Pulses",
       products: [
         {
           productName: "Good Life Whole Moong 500 g",
@@ -146,7 +146,7 @@ const data = {
           id: 7,
         },
         {
-          productName: "Fortune Soya Wadi / Chunks 1 kg",
+          productName: "Fortune Soya Wadi/Chunks 1 kg",
           price: "139",
           oldPrice: "152",
           weight: [50, 100, 150, 200, 250, 500],
@@ -170,7 +170,7 @@ const data = {
       cat_name: "Ghee & Oils",
       products: [
         {
-          productName: "Gowardhan Pure Cow Ghee 1 L (Jar)",
+          productName: "Gowardhan Pure Cow Ghee 1 L",
           price: "676",
           oldPrice: "820",
           weight: [50, 100, 150, 200, 250, 500],
@@ -190,7 +190,7 @@ const data = {
           id: 9,
         },
         {
-          productName: "Nestle EveryDay Ghee 1 L (Carton)",
+          productName: "Nestle EveryDay Ghee 1 L",
           price: "579",
           oldPrice: "620",
           weight: [50, 100, 150, 200, 250, 500],
@@ -211,7 +211,7 @@ const data = {
           id: 10,
         },
         {
-          productName: "Amul Cow Ghee 1 L (Pouch)",
+          productName: "Amul Cow Ghee 1 L",
           price: "250",
           oldPrice: "300",
           weight: [50, 100, 150, 200, 250, 500],
@@ -230,7 +230,7 @@ const data = {
           id: 11,
         },
         {
-          productName: "Amul Cow Ghee 500 ml (Pouch)",
+          productName: "Amul Cow Ghee 500 ml",
           price: "300",
           oldPrice: "380",
           weight: [50, 100, 150, 200, 250, 500],
@@ -248,8 +248,7 @@ const data = {
           id: 12,
         },
         {
-          productName:
-            "HARYANA FRESH Rich Desi Danedar Ghee 500 Grams (Carton)",
+          productName: "HARYANA FRESH Rich Desi Danedar Ghee 500 Grams",
           price: "249",
           oldPrice: "280",
           weight: [50, 100, 150, 200, 250, 500],
@@ -269,7 +268,7 @@ const data = {
         },
         {
           productName:
-            "Kheduthaat Shudh Ghee Vedic Method Traditional Suddha Ghee 1 LTR ml",
+            "Kheduthaat Shudh Ghee Vedic Method Traditional 1 LTR ml",
           price: "699",
           oldPrice: "780",
           weight: [50, 100, 150, 200, 250, 500],
@@ -431,7 +430,7 @@ const data = {
       ],
     },
     {
-      cat_name: "masalas spices",
+      cat_name: "Masalas & Spices",
       products: [
         {
           productName: "Good Life Jeera 100 g",
@@ -495,8 +494,7 @@ const data = {
           id: 24,
         },
         {
-          productName:
-            "VEEDINT CUMIN SEEDS, JEERA WHOLE, CUMIN SEED WHOLE, 1 KG PACK",
+          productName: "VEEDINT CUMIN SEEDS, JEERA, 1 KG PACK",
           price: "180",
           oldPrice: "220",
           weight: [50, 100, 150, 200, 250, 500],
@@ -736,70 +734,16 @@ const data = {
       id: 10,
     },
   ],
-  cartItems: [
+  coupon: [
     {
-      productName: "Moong Dal 2 kg",
-      price: "246",
-      oldPrice: "320",
-      weight: [50, 100, 150, 200, 250, 500],
-      catImg:
-        "https://www.jiomart.com/images/product/original/491432711/moong-dal-2-kg-product-images-o491432711-p491432711-0-202205191636.jpg",
-      discount: "16",
-      brand: "Private Label",
-      productImages: [
-        "https://www.jiomart.com/images/product/original/491432711/moong-dal-2-kg-product-images-o491432711-p491432711-0-202205191636.jpg",
-        "https://www.jiomart.com/images/product/original/491432711/moong-dal-2-kg-product-images-o491432711-p491432711-1-202205191636.jpg",
-        "https://www.jiomart.com/images/product/original/491432711/moong-dal-2-kg-legal-images-o491432711-p491432711-3-202205191636.jpg",
-      ],
-      rating: 4,
-      description:
-        "Moong Dal is essentially packed with loads of nutrients that are extremely beneficial for your health. Moong contains almost every important element that your body might need. Buy Moong Dal online today.",
-      id: 2,
-      quantity: 1,
+      cID: "1",
+      cName: "FRESH25",
+      discount: "25",
     },
     {
-      productName: "BULLMER Men Beige Cotton Blend Printed Single Sweatshirts",
-      price: "699.00",
-      oldPrice: "989.00",
-      weight: [],
-      RAM: [],
-      SIZE: ["M", "L", "XL"],
-      catImg:
-        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-0-202210291839.jpg",
-      discount: "60",
-      brand: "BULLMER",
-      productImages: [
-        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-0-202210291839.jpg",
-        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-1-202210291839.jpg",
-        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-2-202210291839.jpg",
-      ],
-      rating: 4.5,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
-      id: 47,
-      parentCatName: "Fashion",
-      subCatName: "Men Western Wear",
-      quantity: 1,
-    },
-    {
-      productName: "Good Life Moong Dal 1 kg",
-      price: "145",
-      oldPrice: "189",
-      weight: [50, 100, 150, 200, 250, 500],
-      catImg:
-        "https://www.jiomart.com/images/product/original/491187257/good-life-moong-dal-1-kg-product-images-o491187257-p491187257-0-202301171616.jpg",
-      discount: "12",
-      brand: "Good Life",
-      productImages: [
-        "https://www.jiomart.com/images/product/original/491187257/good-life-moong-dal-1-kg-product-images-o491187257-p491187257-0-202301171616.jpg",
-        "https://www.jiomart.com/images/product/original/491187257/good-life-moong-dal-1-kg-product-images-o491187257-p491187257-1-202301171616.jpg",
-        "https://www.jiomart.com/images/product/original/491187257/good-life-moong-dal-1-kg-legal-images-o491187257-p491187257-2-202301171616.jpg",
-      ],
-      rating: 4.5,
-      description:
-        "Good life Moong Dal is procured from reliable and high-quality sources. The beans are best consumed after being sprouted. Dosa with whole moong also turns out to be yummy, another exotic way to eat moong is to eat it as a korma which is spiced up with tangy tomatoes and a cashew paste. It is mainly used as the base for curries such as sambar, dal etc. Buy Good Life Moong Dal online now!",
-      id: 5,
-      quantity: 1,
+      cID: "2",
+      cName: "WELCOME40",
+      discount: "40",
     },
   ],
 };

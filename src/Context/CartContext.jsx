@@ -5,17 +5,30 @@ const CartContext = createContext();
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      const item = action.payload;
-      const data = {
-        name: item.productName,
-        price: item.price,
-        img: item.catImg,
-        quantity: 1,
-        desc: item.description,
-        rating: item.rating,
-        id: item.id,
-      };
-      return [...state, data];
+      const itemExists = state.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (itemExists !== -1) {
+        return state.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        const item = action.payload;
+        const data = {
+          name: item.productName,
+          price: item.price,
+          img: item.catImg,
+          quantity: 1,
+          desc: item.description,
+          rating: item.rating,
+          id: item.id,
+        };
+
+        return [...state, data];
+      }
+
     case "REMOVE_FROM_CART":
       return state.filter((item) => item.id !== action.payload.id);
     case "CLEAR_CART":

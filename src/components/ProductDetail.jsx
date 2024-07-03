@@ -38,7 +38,7 @@ const ProductDetail = () => {
           <span>
             <Rating
               name="half-rating-read"
-              defaultValue={proData.Rating}
+              defaultValue={proData.rating}
               precision={0.5}
               readOnly
             />

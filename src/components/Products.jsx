@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 const Products = () => {
   return (
-    <>
+    <div className="mx-auto">
       <div className="flex flex-wrap gap-6">
         {data.productData.map((cat) =>
           cat.products.map(
@@ -12,7 +12,7 @@ const Products = () => {
           )
         )}
       </div>
-    </>
+    </div>
   );
 };
 
