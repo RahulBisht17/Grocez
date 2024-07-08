@@ -22,9 +22,11 @@ const SearchBar = () => {
           <img src="../../assets/images/icon-compare.svg" />
           <h5>Compare</h5>
         </div>
-        <div className="flex flex-row gap-2 text-lg">
-          <img src="../../assets/images/icon-heart.svg" /> <div>Wishlist</div>
-        </div>
+        <Link>
+          <div className="flex flex-row gap-2 text-lg">
+            <img src="../../assets/images/icon-heart.svg" /> <div>Wishlist</div>
+          </div>
+        </Link>
         <Link to={"cart"}>
           <div className="flex flex-row gap-2 text-lg">
             <img src="../../assets/images/icon-cart.svg" /> <div>Cart</div>

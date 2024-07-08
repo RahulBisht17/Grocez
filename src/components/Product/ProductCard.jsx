@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import CartContext from "../Context/CartContext";
+import CartContext from "../../Context/CartContext";
 import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ data }) => {
-  const { dispatch } = useContext(CartContext);
+  const { cart, dispatch } = useContext(CartContext);
 
   const addToCart = () => {
     dispatch({ type: "ADD_TO_CART", payload: data });

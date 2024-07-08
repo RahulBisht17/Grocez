@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import data from "../Data/data";
+import data from "../../Data/data";
 import { useParams } from "react-router-dom";
-import CartContext from "../Context/CartContext";
+import CartContext from "../../Context/CartContext";
 import Rating from "@mui/material/Rating";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";

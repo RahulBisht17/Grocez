@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import CartContext from "../Context/CartContext";
+import CartContext from "../../Context/CartContext";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import Rating from "@mui/material/Rating";
 

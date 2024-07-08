@@ -14,7 +14,7 @@ const Cart = () => {
         <CartTotal />
       </div>
       <button className="button bg-green-500 font-medium text-white items-center w-52">
-        <Link to={"/products"}>
+        <Link to={"/shop"}>
           <ArrowBackIcon />
           Continue Shopping
         </Link>

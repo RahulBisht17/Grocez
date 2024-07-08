@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import CartContext from "../Context/CartContext";
+import CartContext from "../../Context/CartContext";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import LocalOfferRoundedIcon from "@mui/icons-material/LocalOfferRounded";
 
