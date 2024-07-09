@@ -267,8 +267,7 @@ const data = {
           id: 13,
         },
         {
-          productName:
-            "Kheduthaat Shudh Ghee Vedic Method Traditional 1 LTR ml",
+          productName: "Kheduthaat Shudh Ghee Vedic Method 1 LTR ml",
           price: "699",
           oldPrice: "780",
           weight: [50, 100, 150, 200, 250, 500],

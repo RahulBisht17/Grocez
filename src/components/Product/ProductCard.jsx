@@ -12,7 +12,10 @@ const ProductCard = ({ data }) => {
   };
 
   return (
-    <div className="flex flex-col h-auto w-72 m-2 px-4 pb-4 border-2 shadow-lg border-solid rounded-2xl">
+    <div className="flex flex-col h-auto w-72 m-2 px-4 pb-5 border-2 shadow-lg border-solid rounded-2xl">
+      <span className="w-fit p-2 -mx-4 rounded-tl-2xl rounded-br-2xl bg-green-400">
+        {data.discount}% OFF
+      </span>
       <div className="border-solid h-56">
         <Link to={`/products/${data.id}`}>
           <img src={data.catImg} className="h-full m-auto pt-6 productImg" />

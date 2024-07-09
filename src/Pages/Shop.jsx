@@ -7,7 +7,7 @@ import { FilterProvider } from "../Context/FilterContext";
 const Shop = () => {
   return (
     <FilterProvider>
-      <div className=" p-12 flex gap-12 justify-evenly">
+      <div className=" mx-12 my-6  flex gap-12 justify-evenly">
         <div className="flex flex-col gap-10">
           <CatList />
           <Filter />
