@@ -1,9 +1,9 @@
 // Cart.js
 import React, { useContext } from "react";
-import CartGrid from "./CartGrid";
+import CartGrid from "../components/Cart/CartGrid";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import CartTotal from "./CartTotal";
+import CartTotal from "../components/Cart/CartTotal";
 
 const Cart = () => {
   return (

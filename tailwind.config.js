@@ -6,6 +6,9 @@ export default {
       height: {
         119: "476px",
       },
+      screens: {
+        xs: "320px",
+      },
     },
   },
   plugins: [],

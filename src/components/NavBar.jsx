@@ -8,18 +8,16 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   const [selected, setselected] = useState("home");
   return (
-    <div className="flex justify-between px-10 py-2 border-b-2 font-semibold text-slate-700 text-lg">
-      <div className="flex gap-12 items-center">
+    <div className="hidden lg:flex justify-between py-2 border-b-4 font-semibold text-slate-700 max-w-full px-4 lg:text-sm xl:text-base md:text-xs">
+      <div className="flex md:gap-6 lg:gap-2 xl:gap-4 items-center">
         <button className="button bg-green-500 text-white">
-          <WidgetsOutlinedIcon /> Browse All Categories
+          <WidgetsOutlinedIcon />{" "}
+          <span className="hidden lg:inline-block">Browse All Categories</span>
+          <span className="md:inline-block lg:hidden">Categories</span>
           <KeyboardArrowDownSharpIcon />
         </button>
         <Link
-          className={`pr-2 ${
-            selected == "hot deals"
-              ? "border-b-4 text-green-500 border-green-300"
-              : " "
-          }`}
+          className={`pr-2 ${selected == "hot deals" ? "selected-nav" : " "}`}
           onClick={() => setselected("hot deals")}
         >
           <LocalFireDepartmentOutlinedIcon className="text-green-400" />
@@ -27,58 +25,38 @@ const NavBar = () => {
         </Link>
         <Link
           to={"/"}
-          className={`px-2 ${
-            selected == "home"
-              ? "border-b-4 text-xl text-green-500 border-green-300"
-              : " "
-          }`}
+          className={`px-2 ${selected == "home" ? "selected-nav" : " "}`}
           onClick={() => setselected("home")}
         >
           Home
         </Link>
         <Link
-          className={`px-2 ${
-            selected == "about"
-              ? "border-b-4 text-xl text-green-500 border-green-300"
-              : " "
-          }`}
+          className={`px-2 ${selected == "about" ? "selected-nav" : " "}`}
           onClick={() => setselected("about")}
         >
           About
         </Link>
         <Link
           to={"shop"}
-          className={`px-2 ${
-            selected == "shop"
-              ? "border-b-4 text-xl text-green-500 border-green-300"
-              : " "
-          }`}
+          className={`px-2 ${selected == "shop" ? "selected-nav" : " "}`}
           onClick={() => setselected("shop")}
         >
           Shop
         </Link>
         <Link
-          className={`px-2 ${
-            selected == "blog"
-              ? "border-b-4 text-xl text-green-500 border-green-300"
-              : " "
-          }`}
+          className={`px-2 ${selected == "blog" ? "selected-nav" : " "}`}
           onClick={() => setselected("blog")}
         >
           Blogs
         </Link>
         <Link
-          className={`px-2 ${
-            selected == "contact"
-              ? "border-b-4 text-xl text-green-500 border-green-300"
-              : " "
-          }`}
+          className={`px-2 ${selected == "contact" ? "selected-nav" : " "}`}
           onClick={() => setselected("contact")}
         >
           Contact
         </Link>
       </div>
-      <div className="flex gap-3 items-center">
+      <div className="gap-3 items-center hidden lg:flex">
         <SupportAgentOutlinedIcon fontSize="large" />
         <div className="flex flex-col">
           <span>017XXXXXXX</span>

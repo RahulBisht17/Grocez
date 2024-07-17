@@ -11,7 +11,6 @@ const Header = () => {
 
       <div className="flex gap-7 m-2 text-xl">
         <Link to={"products"}>Products</Link>
-        <Link to={"cart"}>Cart</Link>
       </div>
     </header>
   );

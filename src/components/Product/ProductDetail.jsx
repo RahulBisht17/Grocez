@@ -27,11 +27,19 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="flex flex-row border-t-4 mt-6 py-6 px-32 border-solid">
-        <div className="w-1/3">
+      <div className="flex flex-row border-y-4 my-6 py-6 px-32 border-solid">
+        <div className="w-1/3 flex flex-col">
           <img src={proData.catImg} />
+          <div className="flex my-4 gap-4 justify-center">
+            {proData.productImages.map((image) => (
+              <img src={image} className="w-20" />
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col font-semibold w-2/3 py-6">
+        <div className="flex flex-col font-semibold w-2/3 py-1">
+          <div className="text-2xl text-white bg-green-500 w-fit p-2 rounded-tl-xl  rounded-br-xl mb-4">
+            {proData.discount}% OFF
+          </div>
           <span className="text-3xl font-extrabold mb-3">
             {proData.productName}
           </span>
@@ -57,16 +65,16 @@ const ProductDetail = () => {
           <p className="text-lg text-slate-500 mb-4">{proData.description}</p>
           <div className="text-xl flex flex-row gap-3 my-4 items-center font-semibold text-gray-900">
             Size/Weight:
-            <ul className="flex flex-row gap-2">
+            <ul className="flex flex-row gap-4">
               {proData.weight.map((elem) => (
-                <button className="button">{elem}</button>
+                <button className="button p-3">{elem}</button>
               ))}
             </ul>
           </div>
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-row gap-3 mt-3">
             <button
               onClick={addToCart}
-              className="button border-green-500 bg-green-500 text-white"
+              className="button border-green-500 bg-green-500 text-white p-3"
             >
               <ShoppingCartOutlinedIcon /> Add To Cart
             </button>
