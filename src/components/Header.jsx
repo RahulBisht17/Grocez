@@ -8,10 +8,6 @@ const Header = () => {
     <header>
       <SearchBar />
       <NavBar />
-
-      <div className="flex gap-7 m-2 text-xl">
-        <Link to={"products"}>Products</Link>
-      </div>
     </header>
   );
 };

@@ -42,13 +42,13 @@ const BrandSelector = () => {
     });
 
   return (
-    <div>
+    <div className="text-sm xs1:text-lg">
       <input
         type="text"
         placeholder="Search brands"
         value={searchTerm}
         onChange={handleSearch}
-        className="border-2 border-slate-300 my-2 p-2"
+        className="border-2 border-slate-300 my-2 p-2 w-full"
       />
       <div className="h-48 overflow-y-scroll">
         {filteredBrands.map((brand) => (
