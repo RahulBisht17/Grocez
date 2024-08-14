@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import KeyboardArrowDownSharpIcon from "@mui/icons-material/KeyboardArrowDownSharp";
 import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
 import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
@@ -7,8 +7,35 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [selected, setselected] = useState("home");
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      // Adjust this scroll position to match the point where you want the navbar to become sticky
+      if (scrollPosition > 200) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="hidden lg:flex justify-between py-2 border-b-4 font-semibold text-slate-700 max-w-full px-4 lg:text-sm xl:text-base md:text-xs">
+    <div
+      className={`${
+        isSticky
+          ? "fixed z-40 top-0 w-full bg-white shadow-lg transition translate-y-0 duration-500 ease-in-out"
+          : "relative"
+      }
+        hidden lg:flex justify-between py-2 border-y-2 font-semibold text-slate-700 max-w-full px-4 lg:text-sm xl:text-base md:text-xs`}
+    >
       <div className="flex md:gap-6 lg:gap-2 xl:gap-4 items-center">
         <button className="button bg-green-500 text-white">
           <WidgetsOutlinedIcon />{" "}

@@ -10,6 +10,12 @@ const ProductCard = ({ data }) => {
     dispatch({ type: "ADD_TO_CART", payload: data });
     alert("Product added to cart.");
   };
+  const increment = (product) => {
+    dispatch({ type: "INCREMENT", payload: product });
+  };
+  const decrement = (product) => {
+    dispatch({ type: "DECREMENT", payload: product });
+  };
 
   return (
     <div className="flex flex-col  w-64 px-3 pb-4 border-2 shadow-lg border-solid rounded-2xl">
@@ -52,12 +58,40 @@ const ProductCard = ({ data }) => {
                 ₹{data.oldPrice}
               </span>
             </div>
-            <button
-              onClick={addToCart}
-              className=" button border-2 bg-green-500 hover:bg-green-300 border-green-300 rounded-md w-20 font-bold text-green-700"
-            >
-              Add
-            </button>
+            {cart.find((item) => item.id == data.id) ? (
+              <div className="flex w-fit items-center font-bold text-lg bg-green-500 rounded-md ">
+                <button
+                  onClick={() => decrement(data)}
+                  className="w-7  text-white"
+                >
+                  -
+                </button>
+                {cart.map(
+                  (item) =>
+                    item.id == data.id && (
+                      <div
+                        key={item.id}
+                        className="w-10 bg-white text-center text-green-500"
+                      >
+                        {item.quantity}
+                      </div>
+                    )
+                )}
+                <button
+                  onClick={() => increment(data)}
+                  className="w-7 text-white"
+                >
+                  +
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={addToCart}
+                className=" button border-2 bg-green-500 hover:bg-green-300 border-green-300 rounded-md w-24 font-bold text-green-700"
+              >
+                Add
+              </button>
+            )}
           </div>
         </div>
       </div>

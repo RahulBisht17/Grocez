@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import data from "../../Data/data";
 import { useParams } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
@@ -25,17 +25,31 @@ const ProductDetail = () => {
     alert("Product added to cart.");
   };
 
+  const [selectedImg, setSelectedImg] = useState(proData.catImg);
   return (
     <>
-      <div className="flex flex-row border-y-4 my-6 py-6 px-32 border-solid">
+      <div className="flex flex-row border-y-4 gap-6 my-6 py-6 px-32 border-solid">
         <div className="w-1/3 flex flex-col">
-          <img src={proData.catImg} />
-          <div className="flex my-4 gap-4 justify-center">
-            {proData.productImages.map((image) => (
-              <img src={image} className="w-20" />
+          <div className="border-2 p-4">
+            <img src={selectedImg} />
+          </div>
+
+          <div className="flex overflow-x-scroll">
+            {proData.productImages.map((img) => (
+              <img
+                src={img}
+                key={img}
+                onClick={() => {
+                  setSelectedImg(img);
+                }}
+                className={`w-20 ${
+                  img === selectedImg ? "border-2 border-blue-500" : ""
+                }`}
+              />
             ))}
           </div>
         </div>
+
         <div className="flex flex-col font-semibold w-2/3 py-1">
           <div className="text-2xl text-white bg-green-500 w-fit p-2 rounded-tl-xl  rounded-br-xl mb-4">
             {proData.discount}% OFF
@@ -67,7 +81,9 @@ const ProductDetail = () => {
             Size/Weight:
             <ul className="flex flex-row gap-4">
               {proData.weight.map((elem) => (
-                <button className="button p-3">{elem}</button>
+                <button key={elem} className="button p-3">
+                  {elem}
+                </button>
               ))}
             </ul>
           </div>

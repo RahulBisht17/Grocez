@@ -31,14 +31,16 @@ const SearchBar = () => {
   }, [isOpen]);
   return (
     <>
-      <div className="hidden lg:flex max-w-full px-8 py-8 gap-4 items-center justify-between border-y-4">
+      <div className="hidden lg:flex max-w-full px-8 py-8 gap-4 items-center justify-between">
         <div className="w-44">
           <img src={Logo} alt="logo" />
         </div>
-        <div className="flex gap-4 justify-between items-center text-sm px-4 border-solid border-green-300 border-2 rounded-sm h-14 w-2/5">
+        <div className="flex gap-4 justify-between items-center text-sm px-4 border-solid border-green-300 border-2 rounded-sm h-12 w-2/5">
           <input type="text" placeholder="Search for products..." />
 
-          <button className="button bg-green-500 text-white">Search</button>
+          <button className="button bg-green-500 text-white px-4 hover:bg-green-400">
+            Search
+          </button>
         </div>
         <div className="flex text-sm xl:text-lg gap-2 xl:gap-6">
           <div className="flex gap-1 items-center hover:text-green-500">

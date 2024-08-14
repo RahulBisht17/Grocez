@@ -5,11 +5,13 @@ import Cart from "./Pages/Cart";
 import Home from "./Pages/Home";
 import Login from "./components/Login";
 import Shop from "./Pages/Shop";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />}>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
         <Route path="products" element={<Products />} />
         <Route path="products/:id" element={<ProductDetail />} />
         <Route path="cart" element={<Cart />} />
