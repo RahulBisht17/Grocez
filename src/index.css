@@ -6,7 +6,7 @@
 @tailwind components;
 
 .button {
-  @apply px-3 py-1 border-2 border-solid border-gray-400 rounded-md;
+  @apply px-3 py-1 border-2  border-gray-400 rounded-md;
 }
 .selected-nav {
   @apply border-b-4 text-green-500 border-green-300 md:text-sm lg:text-base xl:text-lg;
@@ -35,6 +35,13 @@
   transition: 0.7s;
 }
 
+.slick-prev:before {
+  display: none;
+}
+.slick-next:before {
+  display: none;
+}
+
 .slick-dots {
   position: absolute !important;
   bottom: 10px !important;
@@ -46,4 +53,7 @@
 }
 .slick-active button::before {
   color: #3bb77e !important;
+}
+.productBanner .slick-slide > div {
+  margin: 0 10px;
 }

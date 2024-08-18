@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import KeyboardArrowDownSharpIcon from "@mui/icons-material/KeyboardArrowDownSharp";
 import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
 import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
@@ -6,8 +7,13 @@ import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [selected, setselected] = useState("home");
+  const { pathname } = useLocation();
+  const [selected, setselected] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    setselected(pathname);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,41 +50,31 @@ const NavBar = () => {
           <KeyboardArrowDownSharpIcon />
         </button>
         <Link
-          className={`pr-2 ${selected == "hot deals" ? "selected-nav" : " "}`}
-          onClick={() => setselected("hot deals")}
+          className={`pr-2 ${selected == "/hot deals" ? "selected-nav" : " "}`}
         >
           <LocalFireDepartmentOutlinedIcon className="text-green-400" />
           Hot Deals
         </Link>
         <Link
           to={"/"}
-          className={`px-2 ${selected == "home" ? "selected-nav" : " "}`}
-          onClick={() => setselected("home")}
+          className={`px-2 ${selected == "/" ? "selected-nav" : " "}`}
         >
           Home
         </Link>
-        <Link
-          className={`px-2 ${selected == "about" ? "selected-nav" : " "}`}
-          onClick={() => setselected("about")}
-        >
+        <Link className={`px-2 ${selected == "/about" ? "selected-nav" : " "}`}>
           About
         </Link>
         <Link
           to={"shop"}
-          className={`px-2 ${selected == "shop" ? "selected-nav" : " "}`}
-          onClick={() => setselected("shop")}
+          className={`px-2 ${selected == "/shop" ? "selected-nav" : " "}`}
         >
           Shop
         </Link>
-        <Link
-          className={`px-2 ${selected == "blog" ? "selected-nav" : " "}`}
-          onClick={() => setselected("blog")}
-        >
+        <Link className={`px-2 ${selected == "/blog" ? "selected-nav" : " "}`}>
           Blogs
         </Link>
         <Link
-          className={`px-2 ${selected == "contact" ? "selected-nav" : " "}`}
-          onClick={() => setselected("contact")}
+          className={`px-2 ${selected == "/contact" ? "selected-nav" : " "}`}
         >
           Contact
         </Link>

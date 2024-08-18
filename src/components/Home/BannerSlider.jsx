@@ -37,7 +37,7 @@ const BannerSlider = () => {
                 placeholder="Your email address"
                 className=" lg:p-2 lg:px-6 md:w-96 bg-transparent"
               />
-              <button className="py-1 md:py-2 px-2 lg:p-2 rounded-full bg-green-500 text-white md:font-semibold">
+              <button className="py-1 md:py-2 px-2 lg:p-2 rounded-full bg-green-500 hover:bg-green-400 text-white md:font-semibold">
                 Subscribe
               </button>
             </div>
