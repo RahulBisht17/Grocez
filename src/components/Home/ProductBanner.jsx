@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
+import { Link } from "react-router-dom";
 function NextArrow(props) {
   const { onClick } = props;
 
@@ -67,25 +67,31 @@ const ProductBanner = () => {
           <div className="ml-6 mt-4 xs1:ml-10 xs1:mt-6 text-xl xs1:text-3xl s1:text-xl xl:text-3xl font-medium w-[60%] xs1:w-[50%] s1:w-48 xl:w-56">
             Everyday Fresh & Clean with Our Products
           </div>
-          <button className="px-1 xs1:py-1 border-2 border-gray-400 rounded-md ml-6 xs1:ml-10 mt-3 bg-green-500 hover:bg-green-400 text-white">
-            Shop Now <ArrowForwardIcon fontSize="small" />
-          </button>
+          <Link to="shop">
+            <button className="px-1 xs1:py-1 border-2 border-gray-400 rounded-md ml-6 xs1:ml-10 mt-3 bg-green-500 hover:bg-green-400 text-white">
+              Shop Now <ArrowForwardIcon fontSize="small" />
+            </button>
+          </Link>
         </div>
         <div className="bg-[url('../../../assets/images/banner-2.png')] bg-center bg-cover h-44 xs1:h-60 sm:h-52 xl:h-64 w-[47%] lg:w-[32%] rounded-xl">
           <div className="ml-6 mt-4 xs1:ml-10 xs1:mt-6 text-xl xs1:text-3xl s1:text-xl xl:text-3xl font-medium w-[60%] xs1:w-[50%] s1:w-48 xl:w-56">
             Make your Breakfast Healthy and Easy
           </div>
-          <button className="px-1 xs1:py-1 border-2 border-gray-400 rounded-md ml-6 xs1:ml-10 mt-3 bg-green-500 hover:bg-green-400 text-white">
-            Shop Now <ArrowForwardIcon fontSize="small" />
-          </button>
+          <Link to="shop">
+            <button className="px-1 xs1:py-1 border-2 border-gray-400 rounded-md ml-6 xs1:ml-10 mt-3 bg-green-500 hover:bg-green-400 text-white">
+              Shop Now <ArrowForwardIcon fontSize="small" />
+            </button>
+          </Link>
         </div>
         <div className="bg-[url('../../../assets/images/banner-3.png')] bg-center bg-cover h-44 xs1:h-60 sm:h-52 xl:h-64 w-[47%] lg:w-[32%] rounded-xl">
           <div className="ml-6 mt-4 xs1:ml-10 xs1:mt-6 text-xl xs1:text-3xl s1:text-xl xl:text-3xl font-medium w-[60%] xs1:w-[50%] s1:w-48 xl:w-56">
             The Organic Product Online
           </div>
-          <button className="px-1 xs1:py-1 border-2 border-gray-400 rounded-md ml-6 xs1:ml-10 mt-3 bg-green-500 hover:bg-green-400 text-white">
-            Shop Now <ArrowForwardIcon fontSize="small" />
-          </button>
+          <Link to="shop">
+            <button className="px-1 xs1:py-1 border-2 border-gray-400 rounded-md ml-6 xs1:ml-10 mt-3 bg-green-500 hover:bg-green-400 text-white">
+              Shop Now <ArrowForwardIcon fontSize="small" />
+            </button>
+          </Link>
         </div>
       </Slider>
     </div>

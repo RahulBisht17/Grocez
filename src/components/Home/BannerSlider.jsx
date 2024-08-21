@@ -12,7 +12,7 @@ const BannerSlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: true,
+    arrows: false,
     fade: true,
     fadeSpeed: 500,
   };

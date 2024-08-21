@@ -4,14 +4,12 @@ import ProductCard from "./ProductCard";
 
 const Products = () => {
   return (
-    <div className="mx-auto">
-      <div className="flex flex-wrap gap-6 px-12 border-2">
-        {data.productData.map((cat) =>
-          cat.products.map(
-            (val) => val.rating >= 4 && <ProductCard key={val.id} data={val} />
-          )
-        )}
-      </div>
+    <div>
+      {data.productData.map((cat) =>
+        cat.products.map(
+          (val) => val.rating === 5 && <ProductCard key={val.id} data={val} />
+        )
+      )}
     </div>
   );
 };

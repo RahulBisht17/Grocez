@@ -11,6 +11,7 @@ export default {
         xs1: "520px",
         xs2: "570px",
         s1: "640px",
+        s2: "698px",
       },
       backgroundImage: {
         slider1: "url('./assets/images/slider-1-min.png')",

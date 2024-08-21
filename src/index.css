@@ -31,15 +31,31 @@
 }
 
 .productImg:hover {
-  transform: scale(1.2);
+  transform: scale(1.12);
   transition: 0.7s;
 }
 
-.slick-prev:before {
-  display: none;
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-.slick-next:before {
-  display: none;
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
 }
 
 .slick-dots {
