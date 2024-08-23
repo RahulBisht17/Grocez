@@ -44,7 +44,7 @@ const PopularProducts = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1420,
+        breakpoint: 1300,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -52,7 +52,7 @@ const PopularProducts = () => {
         },
       },
       {
-        breakpoint: 1150,
+        breakpoint: 920,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -60,7 +60,7 @@ const PopularProducts = () => {
         },
       },
       {
-        breakpoint: 870,
+        breakpoint: 647,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -68,7 +68,7 @@ const PopularProducts = () => {
         },
       },
       {
-        breakpoint: 570,
+        breakpoint: 370,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -88,15 +88,7 @@ const PopularProducts = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1420,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 1363,
+        breakpoint: 1334,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -104,7 +96,7 @@ const PopularProducts = () => {
         },
       },
       {
-        breakpoint: 1034,
+        breakpoint: 647,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -112,7 +104,7 @@ const PopularProducts = () => {
         },
       },
       {
-        breakpoint: 698,
+        breakpoint: 370,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -151,14 +143,19 @@ const PopularProducts = () => {
             </ul>
           </span>
         </div>
-        <Slider {...settings} className="mt-6 pl-6 relative ">
-          {data.productData.map((cat) =>
-            cat.products.map(
-              (val) =>
-                val.rating === 5 && <ProductCard key={val.id} data={val} />
-            )
-          )}
-        </Slider>
+        <div className="flex justify-center mt-2 lg:mt-6 relative">
+          <Slider
+            {...settings}
+            className="max-w-full w-48 xss:w-fit mt-2 lg:mt-6 pl-4 xs1:pl-6 "
+          >
+            {data.productData.map((cat) =>
+              cat.products.map(
+                (val) =>
+                  val.rating === 5 && <ProductCard key={val.id} data={val} />
+              )
+            )}
+          </Slider>
+        </div>
       </>
       <>
         <div className="flex justify-between pt-10 px-4 items-center">
@@ -185,8 +182,8 @@ const PopularProducts = () => {
             </ul>
           </span>
         </div>
-        <div className="flex px-4 pt-6 gap-6 h-full productBanner">
-          <div className="hidden xs1:block bg-[url('../../../assets/images/banner-4.png')] bg-cover bg-center rounded-xl xs1:w-[38%] s2:w-[25%]">
+        <div className="flex justify-center lg:px-4 pt-2 lg:mt-6 gap-6 h-full productBanner">
+          <div className="hidden md1:block bg-[url('../../../assets/images/banner-4.png')] bg-cover bg-center rounded-xl">
             <div className="text-4xl font-semibold ml-4 mt-8">
               Bring nature into your home
             </div>
@@ -197,7 +194,7 @@ const PopularProducts = () => {
             </Link>
           </div>
 
-          <Slider {...settings2} className=" w-full xs1:w-[60%] s2:w-[80%]">
+          <Slider {...settings2} className="w-48 xss:w-full md1:w-[80%]">
             {data.productData.map((cat) =>
               cat.products.map(
                 (val) =>

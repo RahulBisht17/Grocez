@@ -8,10 +8,12 @@ export default {
       },
       screens: {
         xs: "320px",
+        xss: "370px",
         xs1: "520px",
         xs2: "570px",
         s1: "640px",
         s2: "698px",
+        md1: "910px",
       },
       backgroundImage: {
         slider1: "url('./assets/images/slider-1-min.png')",
