@@ -6,10 +6,12 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import CompareArrowsSharpIcon from "@mui/icons-material/CompareArrowsSharp";
 import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
+import { useUserProfile } from "../Context/UserProfileContext";
 
 const SearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef(null);
+  const { profileData } = useUserProfile();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -45,7 +47,7 @@ const SearchBar = () => {
         <div className="flex text-sm xl:text-lg gap-2 xl:gap-6">
           <div className="flex gap-1 items-center hover:text-green-500">
             <CompareArrowsSharpIcon fontSize="medium" />
-            <h5>Compare</h5>
+            <div>Compare</div>
           </div>
           <Link>
             <div className="flex gap-1 items-center hover:text-green-500">
@@ -58,10 +60,16 @@ const SearchBar = () => {
               <ShoppingCartOutlinedIcon fontSize="medium" /> <div>Cart</div>
             </div>
           </Link>
-          <div className="flex gap-1 items-center hover:text-green-500">
-            <AccountCircleRoundedIcon fontSize="medium" />
-            <div>Account</div>
-          </div>
+          <Link to={"account"}>
+            <div className="flex gap-1 items-center hover:text-green-500">
+              {profileData && profileData.photoUrl ? (
+                <img src={profileData.photoUrl} className="w-8 rounded-full" />
+              ) : (
+                <AccountCircleRoundedIcon fontSize="medium" />
+              )}
+              <div>{profileData ? profileData.firstName : "Sign In"}</div>
+            </div>
+          </Link>
         </div>
       </div>
 
@@ -104,13 +112,22 @@ const SearchBar = () => {
           } transition-transform duration-300 ease-in-out z-50`}
         >
           <ul className="p-4 space-y-8">
-            <div className="flex gap-4 items-center mb-10">
-              <AccountCircleRoundedIcon
-                fontSize="large"
-                className="text-slate-500"
-              />
-              <h1>UserName</h1>
-            </div>
+            <Link
+              to="account"
+              onClick={toggleSidebar}
+              className="flex gap-2 items-center mb-10"
+            >
+              {profileData && profileData.photoUrl ? (
+                <img src={profileData.photoUrl} className="w-8 rounded-full" />
+              ) : (
+                <AccountCircleRoundedIcon fontSize="large" />
+              )}
+              <div className="text-2xl font-semibold">
+                {profileData
+                  ? profileData.firstName + " " + profileData.lastName
+                  : "Account"}
+              </div>
+            </Link>
             <li
               className="text-lg hover:text-green-400 pb-1 border-b-2 pl-2"
               onClick={toggleSidebar}

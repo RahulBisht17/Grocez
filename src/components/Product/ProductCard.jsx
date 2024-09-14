@@ -8,7 +8,6 @@ const ProductCard = ({ data }) => {
 
   const addToCart = () => {
     dispatch({ type: "ADD_TO_CART", payload: data });
-    alert("Product added to cart.");
   };
   const increment = (product) => {
     dispatch({ type: "INCREMENT", payload: product });
@@ -18,13 +17,17 @@ const ProductCard = ({ data }) => {
   };
 
   return (
-    <div className="flex flex-col w-40 xs1:w-48 md:w-52 lg:w-60 px-2 xs1:px-3 pb-1 lg:pb-2 border-2 shadow-lg border-solid rounded-2xl">
+    <div className="flex flex-col w-40 xs1:w-48 md:w-52 lg:w-60 px-2 xs1:px-3 pb-1 lg:pb-2 border-2 shadow-lg border-solid rounded-2xl mb-2">
       <span className="w-fit p-1 lg:py-1 px-2 -mx-2 xs1:-mx-3 text-sm lg:text-base  rounded-tl-2xl rounded-br-2xl bg-green-400">
         {data.discount}% OFF
       </span>
       <div className="h-32 xs1:h-40 lg:h-44">
         <Link to={`/products/${data.id}`}>
-          <img src={data.catImg} className="h-full mx-auto pt-4 productImg" />
+          <img
+            loading="lazy"
+            src={data.catImg}
+            className="h-full mx-auto pt-4 productImg"
+          />
         </Link>
       </div>
       <div className="pt-2 font-light">

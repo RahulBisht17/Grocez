@@ -6,7 +6,7 @@ import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-600 text-gray-200 mt-8 pt-8 pb-4 px-4">
+    <footer className="bg-gray-600 text-gray-200 pt-8 pb-4 px-4">
       <div className="container mx-auto flex flex-wrap gap-2 justify-between items-start">
         {/* Logo and Description */}
         <div className="w-full md:w-1/4 mb-6">

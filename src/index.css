@@ -30,6 +30,11 @@
   outline: none;
 }
 
+input[type="search"]::-webkit-search-cancel-button,
+input[type="text"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
 .productImg:hover {
   transform: scale(1.12);
   transition: 0.7s;

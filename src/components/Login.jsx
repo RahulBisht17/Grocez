@@ -1,146 +1,123 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
-// TODO remove, this demo shouldn't need to reset the theme.
-
-const defaultTheme = createTheme();
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import GoogleIcon from "@mui/icons-material/Google";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import {
+  LoginWithEmail,
+  SignInWithGoogle,
+  signInWithFacebook,
+} from "../firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      await LoginWithEmail(email, password);
+      toast.success("Logged In Succesfully.");
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+  const handleGoogle = async () => {
+    try {
+      const user = await SignInWithGoogle();
+      toast.success("Logged In Succesfully.");
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+  const handleFacebook = async () => {
+    try {
+      await signInWithFacebook();
+      toast.success("Logged In Succesfully.");
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <ToastContainer position="top-center" />
+      <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-lg">
+        <h2 className="text-3xl font-extrabold text-center text-green-500">
+          Login
+        </h2>
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full  px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-400 focus:outline-none "
           >
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
-                  }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+            Log In
+          </button>
+          <div className="flex items-center gap-2">
+            <div className="h-px bg-gray-300 flex-grow"></div>
+            <p className=" text-center text-lg font-semibold">OR</p>
+            <div className="h-px bg-gray-300 flex-grow"></div>
+          </div>
+          <div className=" text-gray-500 text-lg font-semibold flex justify-center gap-14 xss:gap-6 ">
+            <button
+              className="border-2 xss:w-2/5 px-2 rounded-md bg-gray-200 hover:bg-gray-200/70 flex justify-center items-center gap-2"
+              onClick={handleGoogle}
             >
-              Sign Up
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-        <Copyright sx={{ mt: 5 }} />
-      </Container>
-    </ThemeProvider>
+              <GoogleIcon fontSize="medium" />
+              <span className="hidden xss:block "> Google</span>
+            </button>
+            <button
+              className="border-2 xss:w-2/5 px-2 rounded-md bg-gray-200 hover:bg-gray-200/70 flex justify-center items-center gap-2"
+              onClick={handleFacebook}
+            >
+              <FacebookIcon fontSize="large" />
+              <span className="hidden xss:block">Facebook</span>
+            </button>
+          </div>
+        </form>
+        <p className="text-base text-center text-gray-600">
+          Don't have an account?{" "}
+          <a href="/signup" className="text-green-600 hover:underline">
+            Sign Up
+          </a>
+        </p>
+      </div>
+    </div>
   );
 };
+
 export default Login;

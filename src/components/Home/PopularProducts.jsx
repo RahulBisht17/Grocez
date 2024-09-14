@@ -114,14 +114,14 @@ const PopularProducts = () => {
     ],
   };
   return (
-    <div className="w-full px-3 pt-4 s1:pt-8 md:px-6 mx-auto">
-      <>
-        <div className="flex justify-between px-4 items-center">
+    <div className="w-full  px-3 pt-4 s1:pt-8 md:px-6 mx-auto">
+      <div>
+        <div className="flex flex-col xs2:flex-row justify-between px-4 items-left xs2:items-center">
           <span className="text-2xl lg:text-3xl xl:text-4xl text-gray-800 font-bold">
             Popular Products
           </span>
           <span>
-            <ul className=" hidden xs2:flex gap-2 s1:gap-3 lg:gap-4 text-xs md:text-sm xl:text-base font-medium cursor-pointer">
+            <ul className="flex gap-2 xss:gap-4 text-xs md:text-sm xl:text-base font-medium cursor-pointer">
               <li className=" hover:text-green-400 transform hover:-translate-y-1 duration-100 ease-in-out">
                 All
               </li>
@@ -143,10 +143,10 @@ const PopularProducts = () => {
             </ul>
           </span>
         </div>
-        <div className="flex justify-center mt-2 lg:mt-6 relative">
+        <div className="flex  justify-center mt-2 lg:mt-4 relative">
           <Slider
             {...settings}
-            className="max-w-full w-48 xss:w-fit mt-2 lg:mt-6 pl-4 xs1:pl-6 "
+            className="max-w-full w-48  xss:w-fit pl-4 xs1:pl-6  "
           >
             {data.productData.map((cat) =>
               cat.products.map(
@@ -156,14 +156,14 @@ const PopularProducts = () => {
             )}
           </Slider>
         </div>
-      </>
+      </div>
       <>
-        <div className="flex justify-between pt-10 px-4 items-center">
+        <div className="flex flex-col xs2:flex-row justify-between px-4 mt-8  items-left xs2:items-center">
           <span className="text-2xl lg:text-3xl xl:text-4xl text-gray-800 font-bold">
             Daily Best Sales
           </span>
           <span>
-            <ul className=" hidden xs2:flex gap-2 s1:gap-3 lg:gap-4 text-xs md:text-sm xl:text-base font-medium cursor-pointer">
+            <ul className=" flex  gap-2 xss:gap-4 text-xs md:text-sm xl:text-base font-medium cursor-pointer">
               <li className=" hover:text-green-400 transform hover:-translate-y-1 duration-100 ease-in-out">
                 All
               </li>
@@ -182,7 +182,7 @@ const PopularProducts = () => {
             </ul>
           </span>
         </div>
-        <div className="flex justify-center lg:px-4 pt-2 lg:mt-6 gap-6 h-full productBanner">
+        <div className="flex justify-center lg:px-4 pt-2 lg:mt-2 gap-6 h-full productBanner">
           <div className="hidden md1:block bg-[url('../../../assets/images/banner-4.png')] bg-cover bg-center rounded-xl">
             <div className="text-4xl font-semibold ml-4 mt-8">
               Bring nature into your home
