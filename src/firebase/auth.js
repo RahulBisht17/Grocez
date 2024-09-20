@@ -3,8 +3,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
-  signInWithPhoneNumber,
-  RecaptchaVerifier,
   FacebookAuthProvider,
 } from "firebase/auth";
 import { setDoc, getDoc, doc } from "firebase/firestore";

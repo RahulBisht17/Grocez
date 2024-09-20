@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Logo from "../../assets/images/logo.png";
+import Logo from "../../assets/images/a-flat-vector-illustrative-style-wordmark-logo-des-zeFbBtC1TaykmH5q2JQHaA-V6HtadLgTY2mfLafAg1kkg-removebg.png";
 import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
@@ -34,9 +34,9 @@ const SearchBar = () => {
   return (
     <>
       <div className="hidden lg:flex max-w-full px-8 py-8 gap-4 items-center justify-between">
-        <div className="w-44">
-          <img src={Logo} alt="logo" />
-        </div>
+        <Link to="/" className="w-48 h-16 relative  overflow-clip">
+          <img src={Logo} className="absolute -top-16 " alt="logo" />
+        </Link>
         <div className="flex gap-4 justify-between items-center text-sm px-4 border-solid border-green-300 border-2 rounded-sm h-12 w-2/5">
           <input type="text" placeholder="Search for products..." />
 
@@ -75,9 +75,9 @@ const SearchBar = () => {
 
       <div className="lg:hidden border-2 max-w-full px-6 py-8">
         <div className="flex justify-between items-center">
-          <div className="w-36">
-            <img src={Logo} alt="logo" />
-          </div>
+          <Link to="/" className="w-40 h-14 relative  overflow-clip">
+            <img src={Logo} className="absolute -top-12 " alt="logo" />
+          </Link>
           <div className="flex gap-5">
             <Link to={"cart"}>
               <ShoppingCartOutlinedIcon

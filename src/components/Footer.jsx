@@ -6,13 +6,18 @@ import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-600 text-gray-200 pt-8 pb-4 px-4">
+    <footer className="bg-gray-700 text-gray-200 pt-8 pb-4 px-4">
       <div className="container mx-auto flex flex-wrap gap-2 justify-between items-start">
         {/* Logo and Description */}
         <div className="w-full md:w-1/4 mb-6">
-          <div>
-            {" "}
-            <img src="../../assets/images/logo.png" />
+          <div className="w-48 h-16 relative overflow-clip">
+            <Link to="/">
+              <img
+                src="/assets/images/a-flat-vector-illustrative-style-wordmark-logo-des-zeFbBtC1TaykmH5q2JQHaA-V6HtadLgTY2mfLafAg1kkg-removebg.png"
+                className="absolute -top-16"
+                alt="logo"
+              />
+            </Link>
           </div>
           <p className="text-gray-200 text-lg mt-2">
             Your go-to grocery store for fresh produce and essentials.
